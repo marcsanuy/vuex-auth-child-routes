@@ -34,7 +34,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 Run vue-cli-service serve and add this repository to the Vue Project Manager, run this project and enjoy
 
-* Fake Credentials from login.js
-User: admin@vue.com
+* Fake Credentials from login.js/
+User: admin@vue.com/
 pass: Password1
 
