@@ -32,7 +32,7 @@ npm run build
 See [Configuration Reference](https://cli.vuejs.org/config/).
 # vuex-auth-child-routes
 
-Run vue-cli-service serve and add this repository to the Vue Project Manager, run this project and enjoy
+* Run vue-cli-service serve and add this repository to the Vue Project Manager, run this project and enjoy
 
 * Fake Credentials from login.js
 User: admin@vue.com/
