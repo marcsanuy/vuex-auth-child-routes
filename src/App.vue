@@ -1,8 +1,23 @@
 <template>
   <div id="app">
-    <div id="nav">
-      
-    </div>
+    <b-container>
+        <navigation-guest v-if="!isLogged"></navigation-guest>
+        <navigation-logged v-else></navigation-logged>
     <router-view/>
+    </b-container>
   </div>
 </template>
+
+<script>
+  import NavigationLogged from '@/components/Navigations/Logged'
+  import NavigationGuest from '@/components/Navigations/Guest'
+  import {mapState} from 'vuex'
+  export default {
+    components: {
+      NavigationLogged, NavigationGuest
+    },
+    computed: {
+      ...mapState('auth', ['isLogged'])
+    }
+  }
+</script>
