@@ -1,16 +1,17 @@
-import Vue from 'vue';
-import { ValidationProvider, extend, setInteractionMode, localize } from 'vee-validate';
-import * as rules from 'vee-validate/dist/rules';
-import es from 'vee-validate/dist/locale/es.json';
- 
-for (let rule in rules) {
-  // add the rule
-  extend(rule, rules[rule]);
-}
- 
-localize('es', es);
-setInteractionMode('lazy'); // Para que la validación salte al abandonar el campo
- 
-// Register it globally
-Vue.component('ValidationProvider', ValidationProvider);
+import Vue from 'vue'
+import VeeValidate, {Validator} from 'vee-validate'
+import validatorEs from 'vee-validate/dist/locale/es'
+Vue.use(VeeValidate, {
+  fieldsBagName: 'veeFields'
+})
+Validator.localize('es', validatorEs)
+
+Validator.extend('strength_password', {
+  getMessage: field => `El campo ${field} debe contener al menos: 1 letra mayúscula, 1 letra minúscula, 1 número y un carácter especial (por ejemplo,. _ &? Etc.)
+`,
+  validate: value => {
+    let strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+    return strongRegex.test(value);
+  }
+});
 
