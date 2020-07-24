@@ -1,5 +1,5 @@
 <template>
-    <b-form @submit.prevent="~emit('login')">
+    <b-form @submit.prevent="$emit('login')">
         <b-form-group
             label="Email"
             description="Los datos son privados"
@@ -13,7 +13,7 @@
                 placeholder="Introduce el email admin@vue.com"
             ></b-form-input>
             <b-form-invalid-feedback>
-                {{ errrors.first('email')}}
+                {{ errors.first('email')}}
             </b-form-invalid-feedback>
         </b-form-group>
 
@@ -29,7 +29,7 @@
                 placeholder="Introduce el password @Password1"
             ></b-form-input>
             <b-form-invalid-feedback>
-                {{ errrors.first('password')}}
+                {{ errors.first('password')}}
             </b-form-invalid-feedback>
         </b-form-group>
 
