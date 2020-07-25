@@ -14,4 +14,3 @@ Validator.extend('strength_password', {
     return strongRegex.test(value);
   }
 });
-

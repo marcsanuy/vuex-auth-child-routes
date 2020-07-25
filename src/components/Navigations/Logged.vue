@@ -9,12 +9,12 @@
 <script>
     import {mapMutations} from 'vuex'
     export default {
-        methods: {
-            ...mapMutations('auth', ['logout']),
-            _logout () {
-                this.logout()
-                this.$router.push('/login')
-            }
+      methods: {
+        ...mapMutations('auth', ['logout']),
+        _logout () {
+          this.logout()
+          this.$router.push('/login')
         }
+      }
     }
-</script>>
+</script>

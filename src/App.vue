@@ -2,9 +2,9 @@
   <div id="app">
     <loading :active.sync="loading"></loading>
     <b-container>
-        <navigation-guest v-if="!isLogged"></navigation-guest>
-        <navigation-logged v-else></navigation-logged>
-    <router-view/>
+      <navigation-guest v-if="!isLogged"></navigation-guest>
+      <navigation-logged v-else></navigation-logged>
+      <router-view/>
     </b-container>
   </div>
 </template>
@@ -21,7 +21,7 @@
     },
     computed: {
       ...mapState('auth', ['isLogged']),
-      ...mapState(['loading'])
+      ...mapState(['loading']),
     }
   }
 </script>

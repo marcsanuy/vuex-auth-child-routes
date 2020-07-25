@@ -1,6 +1,6 @@
 export default {
-    user: null,
-    isLogged: false,
-    error: false,
-    errorMessage:''
+  user: null,
+  isLogged: false,
+  error: false,
+  errorMessage: ''
 }
